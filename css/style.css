@@ -1,0 +1,362 @@
+/* Fonts */
+@font-face {
+	font-family: proximanova;
+	font-weight: normal;
+	src: url(../font/proximanova_regular.ttf);
+}
+h1,h2,h3,p,a{
+	font-family: proximanova;
+	margin-bottom: 0;
+}
+h1{
+	font-size: 70px;
+}
+h2{
+	font-size: 40px;
+}
+h3{
+	margin: 20px 0;
+	font-size: 25px;
+}
+p{
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+/* Base */
+body{
+	overflow-x: hidden;
+}
+.bg1{
+	background: #C8D1E3;
+}
+.bg2{
+	background: #7f95bd;
+}
+.space{
+	height: 100px;
+}
+.width1000{
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+/************************************** HOME **************************************/
+
+/* Preview */
+#home #preview{
+	background-image: url("../img/preview.jpg");
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+	height: 100vh;
+	padding-bottom:50px;
+}
+#home #preview_text{
+	position: relative;
+	top: 40%;
+}
+
+/* Steps */
+#home .cloud{
+	width: 80%;
+	border-radius: 300px;
+	background: #E4E8F1;
+	padding: 50px 100px;
+}
+#home .cloud h1{
+	font-size: 90px;
+	margin-bottom: 20px;
+}
+#home .cloud .cloud_number{
+	max-width: 370px;
+	text-align: center;
+}
+#home .cloud .cloud_text{
+	max-width: 450px;
+}
+
+/* Management */
+#home #line{
+	height: 7px;
+	background: #0A3444;
+}
+#home #management_columns .col{
+	background: #7F95BD;
+	margin: 0 5px;
+	padding: 48px 18px;
+	border-radius: 0 0 40px 40px;
+	position: relative;
+}
+#home #management_columns .col p{
+	font-size: 18px;
+}
+#home .circle{
+	position: absolute;
+	top: -77px;
+	left: 50%;
+	margin-left: -70px;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 5px solid #0A3444;
+	background: #C8D1E3;
+	padding: 20px;
+}
+/* Overview */
+#overview{
+	position: relative;
+	height: 650px;
+}
+#overview .step{
+	position: absolute;
+	height: 200px;
+	width: 25%;
+	padding-top: 15px;
+	padding-left: 80px;
+}
+#overview .step h3, #overview .step p{
+	margin: 0;
+	margin-bottom: 10px;
+}
+#overview .step:first-of-type{
+	z-index: 6;
+	top: 0;
+	left: -10%;
+	background: #0A3444;
+	width: 20%;
+}
+#overview .step:nth-of-type(2){
+	z-index: 5;
+	top: 15%;
+	left: 5%;
+	background: #0A3444;
+}
+#overview .step:nth-of-type(3){
+	z-index: 4;
+	top: 30%;
+	left: 25%;
+	background: #174067;
+}
+#overview .step:nth-of-type(4){
+	z-index: 3;
+	top: 45%;
+	left: 45%;
+	background: #2F6A7A;
+}
+#overview .step:nth-of-type(5){
+	z-index: 2;
+	top: 60%;
+	left: 65%;
+	background: #5B91A9;
+}
+#overview .step:last-of-type{
+	z-index: 1;
+	top: 75%;
+	left: 85%;
+	background: #5B91A9;
+}
+#overview .step .substep{
+	z-index: 10;
+	position: absolute;
+	top: 99.9%;
+	left: 80%;
+	height: 97.5px;
+	width: 20%;
+	clip-path: polygon(100% 0, 0 0, 0 100%);
+	background: #082530;
+}
+#overview .step:first-of-type .substep{
+	left: 75%;
+	width: 23%;
+	background: #082530;
+}
+
+/* Map and Form */
+#home #home_form{
+	background: #324158;
+	padding: 48px 20px;
+	color: white;
+	border-radius: 20px;
+}
+
+/************************************** ANALYTICS **************************************/
+#analytics #top_analytics{
+	height: 400px;
+	background: #0A3444;
+}
+/* Circle progressbar */
+#analytics svg.circle_progressbar{
+	margin-bottom: 20px;
+}
+#analytics svg.circle_progressbar circle{
+	fill: transparent;
+}
+#analytics svg.circle_progressbar circle:nth-child(1){
+	stroke: #5B91A9;
+	stroke-width: 5;
+}
+#analytics svg.circle_progressbar circle:nth-child(2){
+	stroke: #174067;
+	stroke-width: 5;
+	stroke-dashoffset: 25;
+}
+#analytics svg.circle_progressbar .circle_progressbar_text{
+	font-size: 10px; 
+	line-height: 1;
+}
+#analytics svg.circle_progressbar.circle_progressbar1{
+	--percent1: 31;
+}
+#analytics svg.circle_progressbar.circle_progressbar1 circle:nth-child(2){
+	stroke-dasharray: var(--percent1), calc(100 - var(--percent1));
+}
+#analytics svg.circle_progressbar.circle_progressbar2{
+	--percent2: 70;
+}
+#analytics svg.circle_progressbar.circle_progressbar2 circle:nth-child(2){
+	stroke-dasharray: var(--percent2), calc(100 - var(--percent2));
+}
+#analytics svg.circle_progressbar.circle_progressbar3{
+	--percent3: 91;
+}
+#analytics svg.circle_progressbar.circle_progressbar3 circle:nth-child(2){
+	stroke-dasharray: var(--percent3), calc(100 - var(--percent3));
+}
+
+/* Demographics & Statistics */
+#analytics #demographics h2, #analytics #statistics h2{
+	font-family: monospace;
+}
+#analytics #demographics i{
+	font-size: 50px;
+}
+#analytics #demographics h2:first-of-type, #analytics #statistics div:first-of-type h2{
+	color: #194168;
+}
+#analytics #demographics h2:nth-of-type(2), #analytics #statistics div:nth-last-of-type(2) h2{
+	color: #2f6a7a;
+}
+#analytics #demographics h2:last-of-type, #analytics #statistics div:last-of-type h2{
+	color: #5b91a9;
+}
+#analytics #demographics h2 i:first-of-type{
+	margin-left: 30px;
+}
+#analytics #statistics > div{
+	display: flex;
+	margin-bottom: 12px;
+}
+#analytics #statistics h2{
+	width: 100px;
+}
+#analytics #statistics div:first-of-type .progress_bar{
+	background: #194168;
+	width: 67%;
+}
+#analytics #statistics div:nth-last-of-type(2) .progress_bar{
+	background: #2f6a7a;
+	width: 25%;
+}
+#analytics #statistics div:last-of-type .progress_bar{
+	background: #5b91a9;
+	width: 8%;
+}
+
+/************************************** GEO **************************************/
+#geo{
+	background: #314573;
+}
+#geo #geo_top{
+	padding: 100px 0;
+}
+#geo .short_hr{
+	width: 70px;
+	height: 1px;
+	background: #fff;
+}
+#geo #geo_circle_progressbar i{
+	font-size: 80px;
+	margin-right: 30px;
+}
+#geo #geo_circle_progressbar #bi_bar_chart_fill{
+	text-align: center;
+}
+#geo #geo_circle_progressbar .bi-bar-chart-fill{
+	font-size: 150px;
+}
+
+/* Circle progressbar */
+#geo svg.circle_progressbar{
+	margin-bottom: 20px;
+}
+#geo svg.circle_progressbar circle{
+	fill: #000;
+}
+#geo svg.circle_progressbar circle:nth-child(1){
+	stroke: #5B91A9;
+	stroke-width: 1;
+}
+#geo svg.circle_progressbar circle:nth-child(2){
+	stroke: #C9D1D4;
+	stroke-width: 2;
+	stroke-dashoffset: 25;
+}
+#geo svg.circle_progressbar .circle_progressbar_text{
+	font-size: 5px;
+	fill:white;
+}
+#geo svg.circle_progressbar .circle_progressbar_text:last-of-type{
+	font-size: 3px;
+}
+#geo svg.circle_progressbar.circle_progressbar1{
+	--percent1: 100;
+}
+#geo svg.circle_progressbar.circle_progressbar1 circle:nth-child(2){
+	stroke-dasharray: var(--percent1), calc(100 - var(--percent1));
+}
+#geo svg.circle_progressbar.circle_progressbar2{
+	--percent2: 85;
+}
+#geo svg.circle_progressbar.circle_progressbar2 circle:nth-child(2){
+	stroke-dasharray: var(--percent2), calc(100 - var(--percent2));
+}
+#geo svg.circle_progressbar.circle_progressbar3{
+	--percent3: 100;
+}
+#geo svg.circle_progressbar.circle_progressbar3 circle:nth-child(2){
+	stroke-dasharray: var(--percent3), calc(100 - var(--percent3));
+}
+
+/************************************** SOLUTIONS **************************************/
+#solutions .card_img{
+	background: #fff;
+	padding: 60px;
+	border-radius: 20px 20px 0 0;
+}
+#solutions .card_text{
+	padding: 20px;
+	background: #5b91a9;
+	border-radius: 0 0 20px 20px;
+}
+
+/************************************** CONTACT US **************************************/
+#contact #team_container{
+	background: #c8d1e3;
+}
+#contact #team_container .team_img{
+	max-width: 250px;
+	padding: 40px;
+	background: #7f95bd;
+	position: relative;
+}
+#contact #team_container .team_img .team_text{
+	position: absolute;
+	top:85%;
+	background: #fff;
+	width: 100%;
+	padding: 10px;
+}
+#mapContact{
+	height: 50vh;
+}
