@@ -157,11 +157,11 @@ body{
 	padding: 20px;
 }
 /* Overview */
-#a8{
+#home #a8{
 	position: relative;
 	height: 650px;
 }
-#a8 .step{
+#home #a8 .step{
 	position: absolute;
 	height: 200px;
 	width: 25%;
@@ -170,15 +170,15 @@ body{
 	padding-right: 15px;
 	opacity: 0;
 }
-#a8.show .step{
+#home #a8.show .step{
 	opacity: 1;
 }
 
-#a8 .step h3, #overview .step p{
+#home #a8 .step h3, #overview .step p{
 	margin: 0;
 	margin-bottom: 10px;
 }
-#a8 .step:first-of-type{
+#home #a8 .step:first-of-type{
 	z-index: 6;
 	top: 0;
 	left: -10%;
@@ -186,42 +186,42 @@ body{
 	width: 20%;
 	transition-delay: .3s;
 }
-#a8 .step:nth-of-type(2){
+#home #a8 .step:nth-of-type(2){
 	z-index: 5;
 	top: 15%;
 	left: 5%;
 	background: #0A3444;
 	transition-delay: .6s;
 }
-#a8 .step:nth-of-type(3){
+#home #a8 .step:nth-of-type(3){
 	z-index: 4;
 	top: 30%;
 	left: 25%;
 	background: #174067;
 	transition-delay: .9s;
 }
-#a8 .step:nth-of-type(4){
+#home #a8 .step:nth-of-type(4){
 	z-index: 3;
 	top: 45%;
 	left: 45%;
 	background: #2F6A7A;
 	transition-delay: 1.2s;
 }
-#a8 .step:nth-of-type(5){
+#home #a8 .step:nth-of-type(5){
 	z-index: 2;
 	top: 60%;
 	left: 65%;
 	background: #5B91A9;
 	transition-delay: 1.5s;
 }
-#a8 .step:last-of-type{
+#home #a8 .step:last-of-type{
 	z-index: 1;
 	top: 75%;
 	left: 85%;
 	background: #5B91A9;
 	transition-delay: 1.8s;
 }
-#a8 .step .substep{
+#home #a8 .step .substep{
 	z-index: 10;
 	position: absolute;
 	top: 99.9%;
@@ -233,7 +233,7 @@ body{
 	opacity: inherit;
 	transition: .5s;
 }
-#a8 .step:first-of-type .substep{
+#home #a8 .step:first-of-type .substep{
 	left: 75%;
 	width: 23%;
 	background: #082530;
@@ -244,43 +244,69 @@ body{
 	height: 400px;
 	background: #0A3444;
 }
+#analytics #a1{
+	opacity: 0;
+	transform: translateY(40%);
+	transition: 0.5s;
+}
+#analytics #a1.show{
+	opacity: 1;
+	transform: translateY(0);
+}
+
 /* Circle progressbar */
-#analytics svg.circle_progressbar{
+#analytics #a2 svg.circle_progressbar{
 	margin-bottom: 20px;
 }
-#analytics svg.circle_progressbar circle{
+#analytics #a2 svg.circle_progressbar circle{
 	fill: transparent;
 }
-#analytics svg.circle_progressbar circle:nth-child(1){
+#analytics #a2 svg.circle_progressbar circle:nth-child(1){
 	stroke: #5B91A9;
 	stroke-width: 5;
+	opacity: 0;
 }
-#analytics svg.circle_progressbar circle:nth-child(2){
+#analytics #a2 svg.circle_progressbar circle:nth-child(2){
 	stroke: #174067;
 	stroke-width: 5;
 	stroke-dashoffset: 25;
 }
-#analytics svg.circle_progressbar .circle_progressbar_text{
+#analytics #a2.show svg.circle_progressbar circle:nth-child(1){
+	opacity: 1;
+}
+#analytics #a2 svg.circle_progressbar .circle_progressbar_text{
 	font-size: 10px; 
 	line-height: 1;
 }
-#analytics svg.circle_progressbar.circle_progressbar1{
-	--percent1: 31;
+#analytics #a2 svg.circle_progressbar.circle_progressbar1{
+	--percent1: 0;
 }
-#analytics svg.circle_progressbar.circle_progressbar1 circle:nth-child(2){
+#analytics #a2.show svg.circle_progressbar.circle_progressbar1{
+	--percent1: 34;
+}
+#analytics #a2 svg.circle_progressbar.circle_progressbar1 circle:nth-child(2){
 	stroke-dasharray: var(--percent1), calc(100 - var(--percent1));
+	transition: 1s;
 }
-#analytics svg.circle_progressbar.circle_progressbar2{
+#analytics #a2 svg.circle_progressbar.circle_progressbar2{
+	--percent2: 0;
+}
+#analytics #a2.show svg.circle_progressbar.circle_progressbar2{
 	--percent2: 70;
 }
-#analytics svg.circle_progressbar.circle_progressbar2 circle:nth-child(2){
+#analytics #a2 svg.circle_progressbar.circle_progressbar2 circle:nth-child(2){
 	stroke-dasharray: var(--percent2), calc(100 - var(--percent2));
+	transition: 1s;
 }
-#analytics svg.circle_progressbar.circle_progressbar3{
+#analytics #a2 svg.circle_progressbar.circle_progressbar3{
+	--percent3: 0;
+}
+#analytics #a2.show svg.circle_progressbar.circle_progressbar3{
 	--percent3: 91;
 }
-#analytics svg.circle_progressbar.circle_progressbar3 circle:nth-child(2){
+#analytics #a2 svg.circle_progressbar.circle_progressbar3 circle:nth-child(2){
 	stroke-dasharray: var(--percent3), calc(100 - var(--percent3));
+	transition: 1s;
 }
 
 /* Demographics & Statistics */
@@ -290,13 +316,25 @@ body{
 #analytics #demographics i{
 	font-size: 50px;
 }
-#analytics #demographics h2:first-of-type, #analytics #statistics div:first-of-type h2{
+#analytics #demographics>div{
+	height: 60px;
+	display: flex;
+	align-items: center;
+	opacity: 0;
+}
+#analytics #demographics>div h2, #analytics #statistics div h2{
+	width: 70px;
+}
+#analytics #a3.show #demographics>div{
+	opacity: 1;
+}
+#analytics #demographics div:first-of-type, #analytics #statistics div:first-of-type h2{
 	color: #194168;
 }
-#analytics #demographics h2:nth-of-type(2), #analytics #statistics div:nth-last-of-type(2) h2{
+#analytics #demographics div:nth-of-type(2), #analytics #statistics div:nth-last-of-type(2) h2{
 	color: #2f6a7a;
 }
-#analytics #demographics h2:last-of-type, #analytics #statistics div:last-of-type h2{
+#analytics #demographics div:last-of-type, #analytics #statistics div:last-of-type h2{
 	color: #5b91a9;
 }
 #analytics #demographics h2 i:first-of-type{
@@ -305,20 +343,39 @@ body{
 #analytics #statistics > div{
 	display: flex;
 	margin-bottom: 12px;
+	align-items: center;
 }
 #analytics #statistics h2{
 	width: 100px;
 }
+#analytics #statistics > div{
+	height: 50px;
+}
+#analytics #statistics div .progress_bar{
+	height: 50px;
+}
 #analytics #statistics div:first-of-type .progress_bar{
 	background: #194168;
+	width: 0;
+	transition: 1.34s linear;
+}
+#analytics #a3.show #statistics div:first-of-type .progress_bar{
 	width: 67%;
 }
 #analytics #statistics div:nth-last-of-type(2) .progress_bar{
 	background: #2f6a7a;
+	width: 0;
+	transition: .5s linear;
+}
+#analytics #a3.show #statistics div:nth-last-of-type(2) .progress_bar{
 	width: 25%;
 }
 #analytics #statistics div:last-of-type .progress_bar{
 	background: #5b91a9;
+	width: 0;
+	transition: .16s liner;
+}
+#analytics #a3.show #statistics div:last-of-type .progress_bar{
 	width: 8%;
 }
 
@@ -336,6 +393,16 @@ body{
 	width: 70px;
 	height: 1px;
 	background: #fff;
+}
+#geo #a5 img{
+	transform: scale(0.5);
+	opacity: 0;
+	transition: .5s;
+}
+#geo #a5.show img{
+	transform: scale(1);
+	opacity: 1;
+	transition: .5s;
 }
 #geo #geo_circle_progressbar i{
 	font-size: 80px;
@@ -387,6 +454,15 @@ body{
 }
 
 /************************************** SOLUTIONS **************************************/
+#solutions .row{
+	opacity: 0;
+	transform: translateY(40%);
+	transition: .5s;
+}
+#solutions #a4.show .row{
+	opacity: 1;
+	transform: translateY(0);
+}
 #solutions .card_img{
 	background: #fff;
 	padding: 60px;
